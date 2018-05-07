@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <title>心愿账单</title>
+    <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <style>
+        body{
+            /*background: url("img/bg.jpg");*/
+            background: #e3e3e3;
+            font-size: 14px;
+        }
+        .logo {
+            margin: auto;
+        }
+        .i_block{display: block;text-align: center;}
+        .addwish{margin-top: 10px;}
+        .name {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .img {
+            height: 53%;
+            margin: auto;
+            margin-top: 12px;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .search {
+            margin: auto;
+            margin-top:10px;
+        }
+
+        .noExtension {
+            width: 60%;
+            height: 100px;
+            margin: auto;
+            font-size: 23px;
+        }
+
+        #search_value , #content{
+            width: 100%;
+            box-shadow:2px 2px 5px #ccc;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 4px;
+            border:none;
+            padding:10px;
+        }
+        #content{
+            height:auto;
+            line-height: 1.2em;
+        }
+
+        .search button {
+            width: 18%;
+            height: 50px;
+            margin-left: 6px;
+            box-shadow: 3px 5px grey, 1px 1px #333;
+        }
+
+         @keyframes rotate {
+            0% { transform:rotateY(0deg);}
+            25% { transform:rotateY(180deg);}
+            50% { transform:rotateY(0deg);}
+            75% { transform:rotateY(180deg);}
+            100% { transform:rotateY(0deg);}
+        }
+
+        .logo_rotate {
+			/*
+            animation: rotate 10s infinite;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+				*/
+            /*  当动画结束时，让<div>元素保留上一个关键帧的样式值 */
+        }
+
+         .result_success {
+            margin: auto;
+            background:#fff;
+            margin-top: 10px;
+            border-radius: 3px;
+            padding:5px;
+        }
+
+        .result_faile{
+            width: 60%;
+            margin: auto;
+        }
+
+        .add_banner{
+            width: 60%;
+            margin: auto;
+        }
+
+        .add_banner input{
+            width: 90%;
+            height: 50px;
+            box-shadow: 3px 5px grey, 1px 1px #333;
+        }
+
+        .add_banner button{
+            width: 18%;
+            height: 50px;
+            margin-left: 6px;
+            box-shadow: 3px 5px grey, 1px 1px #333;
+        }
+
+        #search_banner{
+            font-size: 20px;
+            margin-top:10px;
+            text-align: center;
+        }
+        .search_result{font-size: 14px;}
+        p{
+            text-indent:2em;
+            font-size: 14px;
+            margin-bottom: 0;
+            line-height: 1.2em;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .contenner{
+            width:90%;
+            margin:0 auto;
+            max-width: 600px;
+        }
+
+        .author{
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .author p{
+            display: inline-block;
+            font-size: 14px;
+            font-style: normal;
+        }
+        .copyright{
+            padding:10px 0;
+            color:#999;
+        }
+        .copyright p{
+            font-size: 12px;
+            text-align: center;
+        }
+        .loading{
+            position: fixed;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right:0;
+            text-align: center;
+            background-color: rgba(0,0,0,0.5);
+
+        }
+        .loading p{margin-top:50%;color:#fff;}
+
+    </style>
+</head>
+
+<body>
+    <div class="contenner">
+        <div class="logo">
+            <div class="name">心愿账单</div>
+            <div class="img logo_rotate">
+                <img src="img/3562319_438696.jpg" alt="">
+            </div>
+        </div>
+        <div class="search">
+            <input id="search_value" type="text" placeholder="请输入您的心愿">
+        </div>
+        <div class="result_success hide">
+            <div id=search_banner></div>
+            <p id=search_result> wait for content </p>
+            <div class="author">
+                <i><p> 作者:</p> <p id=search_result_author> </p></i>
+            </div>
+        </div>
+        <div class="search s_content">
+            <textarea id="content" rows="8" placeholder="心愿内容，区块链永远帮你保存"></textarea>
+        </div>
+        <a href="javascript:;" id="search" class="i_block btn btn-success addwish" >查找心愿</a>
+        <a href="javascript:;" id="add" class="i_block btn btn-success addwish hide" >添加心愿</a>
+        <div class="copyright">
+            <p>还记得当时的心愿吗？区块链永久保存您年轻时的心愿！</p>
+        </div>
+    </div>
+    <div class="loading hide">
+        <p>loading……</p>        
+    </div>
+    <script src=lib/jquery-3.3.1.min.js></script>
+    <script src=lib/bootstrap-4.0.0-dist/js/bootstrap.min.js></script>
+    <script src="lib/nebPay.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
